@@ -47,7 +47,7 @@ export const secretEntrance2 = () => {
 
 
             pointerAtZeroCount += hundreds;
-            if(prevPos - noHundredsDistance <= 0 && prevPos != 0)   
+            if(prevPos - noHundredsDistance <= 0 && prevPos !== 0)   
                 pointerAtZeroCount++;
         }
         else {
