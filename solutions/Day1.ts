@@ -59,5 +59,3 @@ export const secretEntrance2 = () => {
     }
     return pointerAtZeroCount;
 }
-
-// secretEntrance2()
