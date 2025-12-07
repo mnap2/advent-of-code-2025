@@ -36,7 +36,7 @@ export const secretEntrance2 = () => {
         const direction = line[0];
         const distance = Number(line.slice(1));
         
-        const posBeforeRotation = currPos;
+        const prevPos = currPos;
         let noHundredsDistance = distance % 100;
         let hundreds = (distance - noHundredsDistance) / 100;
 
@@ -47,14 +47,14 @@ export const secretEntrance2 = () => {
 
 
             pointerAtZeroCount += hundreds;
-            if(posBeforeRotation - noHundredsDistance <= 0 && posBeforeRotation != 0)   
+            if(prevPos - noHundredsDistance <= 0 && prevPos != 0)   
                 pointerAtZeroCount++;
         }
         else {
             currPos = (currPos + distance) % 100;
 
             pointerAtZeroCount += hundreds;
-            if(currPos < posBeforeRotation)
+            if(currPos < prevPos)
                 pointerAtZeroCount++;
         }
     }
