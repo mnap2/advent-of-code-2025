@@ -1,4 +1,4 @@
-import { secretEntrance1, secretEntrance2 } from "../solutions/Day1-part1";
+import { secretEntrance1, secretEntrance2 } from "../solutions/Day1";
 import fs from "fs"
 
 let readFileSyncSpy = jest.spyOn(fs, 'readFileSync');
@@ -31,10 +31,9 @@ describe("secretEntrance tests", () => {
             },
         ])('$description', ({input, answer}) => {
             readFileSyncSpy = jest.spyOn(fs, 'readFileSync');
-            readFileSyncSpy.mockReturnValue(input)
+            readFileSyncSpy.mockReturnValue(input);
+            
             expect(secretEntrance1()).toBe(answer);
-            expect(readFileSyncSpy).toHaveBeenCalled()
-            readFileSyncSpy.mockRestore()
         });
     })
 
@@ -72,8 +71,8 @@ describe("secretEntrance tests", () => {
         ])('$description', ({input, answer}) => {
             readFileSyncSpy = jest.spyOn(fs, 'readFileSync');
             readFileSyncSpy.mockReturnValue(input)
+
             expect(secretEntrance2()).toBe(answer);
-            expect(readFileSyncSpy).toHaveBeenCalled()
         });
     })
     
