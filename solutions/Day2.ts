@@ -11,6 +11,7 @@ export const giftShop = () => {
         const [firstIdStr, lastIdStr] = idRange.split("-");
         for(let id = Number(firstIdStr); id <= Number(lastIdStr); id++) {
             const idString = id.toString();
+            
             const firstPart = idString.slice(0, idString.length / 2);
             const secondPart = idString.slice(idString.length / 2, idString.length);
             
@@ -33,12 +34,12 @@ export const giftShop2 = () => {
         for(let id = Number(firstIdStr); id <= Number(lastIdStr); id++) {
             const idString = id.toString();
             
-            for(let possibleRepeatsNum = 1; possibleRepeatsNum <= idString.length / 2; possibleRepeatsNum++) {
+            for(let possibleRepeatLength = 1; possibleRepeatLength <= idString.length / 2; possibleRepeatLength++) {
                 let isInvalid = true;
-                const possibleRepeatPattern = idString.slice(0, possibleRepeatsNum);
+                const possibleRepeatPattern = idString.slice(0, possibleRepeatLength);
 
-                for(let index = 0 + possibleRepeatsNum; index < idString.length; index += possibleRepeatsNum) {
-                    if(idString.substring(index, index+possibleRepeatsNum) !== possibleRepeatPattern) {
+                for(let index = 0 + possibleRepeatLength; index < idString.length; index += possibleRepeatLength) {
+                    if(idString.substring(index, index + possibleRepeatLength) !== possibleRepeatPattern) {
                         isInvalid = false;
                         break;
                     }
