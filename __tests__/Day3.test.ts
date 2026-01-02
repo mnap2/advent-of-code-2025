@@ -1,11 +1,11 @@
 import { Lobby, Lobby2 } from "../solutions/Day3";
-import fs from "fs"
+import fs from "fs";
 
 let readFileSyncSpy = jest.spyOn(fs, 'readFileSync');
 
 describe("lobby tests", () => {
     beforeEach(() => {
-        readFileSyncSpy.mockRestore()
+        readFileSyncSpy.mockRestore();
     })
 
     describe("part one", () => {
@@ -28,7 +28,7 @@ describe("lobby tests", () => {
             }
         ])('$description', ({input, answer}) => {
             readFileSyncSpy = jest.spyOn(fs, 'readFileSync');
-            readFileSyncSpy.mockReturnValue(input)
+            readFileSyncSpy.mockReturnValue(input);
 
             expect(Lobby2()).toBe(answer);
         });
